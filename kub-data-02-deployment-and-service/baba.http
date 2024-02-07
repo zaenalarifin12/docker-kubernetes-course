@@ -1,0 +1,11 @@
+### GET request with a header
+GET http://localhost/story
+Accept: application/json
+
+### Send POST request with json body
+POST http://localhost/story
+Content-Type: application/json
+
+{
+  "text": "content"
+}

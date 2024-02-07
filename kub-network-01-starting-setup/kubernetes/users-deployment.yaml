@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-deployment
+  labels:
+    app: users-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: users
+  template:
+    metadata:
+#      name: users
+      labels:
+        app: users
+    spec:
+      containers:
+        - name: users-container
+          image: zaenalarf/kub-demo-users
+          env:
+#            - name: AUTH_ADDRESS
+#              value: 10.106.3.142 # ip from get services
+            - name: AUTH_ADDRESS
+              value: 'auth-service.default' # kubectl get namespace
+        - name: auth-container
+          image: zaenalarf/kub-demo-auth
+
+      

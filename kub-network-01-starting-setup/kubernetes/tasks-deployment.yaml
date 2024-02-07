@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tasks-deployment
+  labels:
+    app: tasks-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tasks
+  template:
+    metadata:
+      #      name: users
+      labels:
+        app: tasks
+    spec:
+      containers:
+        - name: tasks-container
+          image: zaenalarf/kub-demo-tasks:latest
+          env:
+            - name: AUTH_ADDRESS
+              value: 'auth-service.default'
+            - name: TASKS_FOLDER
+              value: tasks
+
+
+      

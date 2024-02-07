@@ -1,0 +1,12 @@
+### Send POST request with json body
+POST http://a3d9a05ea994a4ad9add50f89800f7c9-93994667.us-east-1.elb.amazonaws.com/signup
+Content-Type: application/json
+
+{
+  "email": "tasaasdsexxjashasdhjashkjdashkasjdhasst@testa.test",
+  "password": "conasdxxtccent"
+}
+
+### GET request with a header
+GET http://a3d9a05ea994a4ad9add50f89800f7c9-93994667.us-east-1.elb.amazonaws.com/logs
+Accept: application/json
